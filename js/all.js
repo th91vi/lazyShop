@@ -1,11 +1,11 @@
 // lazyLoading com intersectioObserver
-const targets = document.querySelectorAll('img');
-const lazyload = target => {
-    const io = new IntersectionObserver((entries, observer) => {
+var targets = document.querySelectorAll('img');
+var lazyload = target => {
+    var io = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                const img = entry.target;
-                const src = img.getAttribute('data-img');
+                var img = entry.target;
+                var src = img.getAttribute('data-img');
                 img.setAttribute('src', src);
                 observer.disconnect();
             }
